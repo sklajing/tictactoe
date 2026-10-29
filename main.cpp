@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 void PrintBoard(const char Board[3][3]) {
     for (int i = 0 ; i < 3 ; i++ ) {
@@ -17,6 +18,12 @@ void PrintBoard(const char Board[3][3]) {
 void GetMove(char player,char Board[3][3]) {
     while (true) {
         int n, m;std::cin >> n >> m;
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clear 
+            std::cout << "Please enter two numbers\n";
+            continue;  
+        }
         if (n < 1 || n > 3 || m < 1 || m > 3) {
             std::cout << "Row or column must be 1-3\n";
         }

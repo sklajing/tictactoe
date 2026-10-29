@@ -39,7 +39,7 @@ bool HaveWin(const char Board[3][3], const char player) {
         (Board[0][0] == Board[0][1] && Board[0][1] == Board[0][2] && Board[0][2] == player) ||
         (Board[0][1] == Board[1][1] && Board[1][1] == Board[2][1] && Board[2][1] == player) ||
         (Board[0][2] == Board[1][2] && Board[1][2] == Board[2][2] && Board[2][2] == player) || 
-        (Board[0][2] == Board[1][1] && Board[1][1] == Board[3][0] && Board[3][0] == player) ) {
+        (Board[0][2] == Board[1][1] && Board[1][1] == Board[2][0] && Board[2][0] == player) ) {
             return true;
         }
         return false;
